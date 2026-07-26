@@ -1,0 +1,561 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.8s ease-in;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 60px 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.welcome-card h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-card p {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.welcome-card .subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+}
+
+.btn-yes:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(79, 172, 254, 0.6);
+}
+
+.btn-no {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(250, 112, 154, 0.4);
+}
+
+.btn-no:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(250, 112, 154, 0.6);
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.scene-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+#catCanvas, #catWalkCanvas, #treeCanvas, #fireworksCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+.cat-dialog {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    z-index: 10;
+}
+
+.dialog-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.5s ease;
+}
+
+.dialog-box p {
+    color: #333;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.garden-scene {
+    background: linear-gradient(to bottom, #87ceeb 0%, #e0f6ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.garden {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.butterfly {
+    position: absolute;
+    font-size: 2em;
+    animation: fly 6s infinite ease-in-out;
+}
+
+.butterfly1 {
+    top: 50px;
+    left: 50px;
+    animation-delay: 0s;
+}
+
+.butterfly2 {
+    top: 100px;
+    right: 100px;
+    animation-delay: 2s;
+}
+
+.butterfly3 {
+    bottom: 100px;
+    left: 150px;
+    animation-delay: 4s;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(30px, -30px) rotate(10deg);
+    }
+    50% {
+        transform: translate(0, -60px) rotate(0deg);
+    }
+    75% {
+        transform: translate(-30px, -30px) rotate(-10deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.flower {
+    position: absolute;
+    font-size: 3em;
+}
+
+.flower1 {
+    bottom: 80px;
+    left: 50px;
+}
+
+.flower2 {
+    bottom: 60px;
+    right: 80px;
+}
+
+.flower3 {
+    bottom: 100px;
+    left: 250px;
+}
+
+.gallery-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-section h2 {
+    color: #764ba2;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.photo-frame {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 30px;
+    background: white;
+    border: 15px solid #764ba2;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.frame-decoration {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.love-message {
+    margin-top: 20px;
+}
+
+.love-message p {
+    color: #333;
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.tree-scene {
+    background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+    position: relative;
+}
+
+.tree-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.tree {
+    position: absolute;
+    width: 80px;
+    height: 150px;
+    background: linear-gradient(to bottom, #2d5016 0%, #1a3a0a 100%);
+    border-radius: 30px 30px 10px 10px;
+    box-shadow: inset -10px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.tree1 {
+    left: 50px;
+    bottom: 80px;
+}
+
+.tree2 {
+    right: 50px;
+    bottom: 60px;
+}
+
+.falling-leaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #ff6b6b 0%, #d63031 100%);
+    border-radius: 50% 0;
+    animation: fall 3s infinite linear;
+}
+
+.leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
+.leaf:nth-child(2) { left: 30%; animation-delay: 1s; }
+.leaf:nth-child(3) { left: 50%; animation-delay: 2s; }
+.leaf:nth-child(4) { left: 70%; animation-delay: 0.5s; }
+.leaf:nth-child(5) { left: 90%; animation-delay: 1.5s; }
+
+@keyframes fall {
+    0% {
+        top: -30px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+
+.diary-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.diary-page h2 {
+    color: #764ba2;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.diary-entry {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f5576c;
+}
+
+.diary-entry:last-child {
+    border-bottom: none;
+}
+
+.diary-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.diary-entry p {
+    color: #333;
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.diary-entry strong {
+    color: #764ba2;
+}
+
+.final-page {
+    background: linear-gradient(to bottom, #0a0a1a 0%, #1a0a2e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.night-sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.stars {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 100px 100px white, 150px 150px white, 200px 80px white, 250px 120px white, 300px 200px white, 350px 80px white, 400px 250px white, 450px 120px white, 500px 180px white, 550px 150px white, 600px 100px white, 650px 200px white;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.heart-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(245, 87, 108, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: heartPulse 2s infinite;
+    filter: blur(20px);
+}
+
+@keyframes heartPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.8;
+    }
+}
+
+.final-message {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+}
+
+.final-message h1 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(245, 87, 108, 0.6);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(245, 87, 108, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(245, 87, 108, 0.8);
+    }
+}
+
+.heart-animation {
+    font-size: 5em;
+    margin: 30px 0;
+    animation: heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.birthday-wish {
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.love-note {
+    font-size: 1.5em;
+    margin-top: 30px;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .welcome-card h1 {
+        font-size: 2em;
+    }
+
+    .welcome-card p {
+        font-size: 1.2em;
+    }
+
+    .final-message h1 {
+        font-size: 2em;
+    }
+
+    .heart-animation {
+        font-size: 3em;
+    }
+
+    .birthday-wish {
+        font-size: 1em;
+    }
+
+    .scene-container {
+        height: 300px;
+    }
+
+    .gallery-section {
+        padding: 20px;
+    }
+
+    .photo-frame {
+        width: 200px;
+        height: 200px;
+    }
+}

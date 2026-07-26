@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday Arshiya 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page 1: Welcome/Landing -->
+    <div id="page1" class="page active">
+        <div class="container">
+            <div class="welcome-card">
+                <h1>✨ A Special Gift For You ✨</h1>
+                <p>Happy Birthday Arshiya! 🎉</p>
+                <p class="subtitle">Click below to start an adventure...</p>
+                <button class="btn btn-primary" onclick="goToPage(2)">Open Your Gift 🎁</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Cat Introduction -->
+    <div id="page2" class="page">
+        <div class="container">
+            <div class="scene-container">
+                <canvas id="catCanvas"></canvas>
+                <div class="cat-dialog">
+                    <div class="dialog-box">
+                        <p id="catMessage">Hey beautiful! 🤌🏻 Let's go on an adventure of love...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="choices">
+                <button class="btn btn-yes" onclick="handleChoice('yes')">Yes, I'll come! 💕</button>
+                <button class="btn btn-no" onclick="handleChoice('no')">No, I don't want to</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Garden Scene -->
+    <div id="page3" class="page">
+        <div class="container">
+            <div class="scene-container garden-scene">
+                <div class="garden">
+                    <div class="butterfly butterfly1">🦋</div>
+                    <div class="butterfly butterfly2">🦋</div>
+                    <div class="butterfly butterfly3">🦋</div>
+                    <div class="flower flower1">🌹</div>
+                    <div class="flower flower2">🌹</div>
+                    <div class="flower flower3">🌹</div>
+                </div>
+                <canvas id="catWalkCanvas"></canvas>
+                <div class="cat-dialog">
+                    <div class="dialog-box">
+                        <p id="gardenMessage">Welcome to our beautiful garden... This is where our first date will be 🌹</p>
+                    </div>
+                </div>
+            </div>
+            <div class="choices">
+                <button class="btn btn-primary" onclick="goToPage(4)">I would see 🙈</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Photo Gallery -->
+    <div id="page4" class="page">
+        <div class="container">
+            <div class="gallery-section">
+                <h2>Do you know who this is? 💕</h2>
+                <div class="photo-frame">
+                    <img id="galleryPhoto" src="https://via.placeholder.com/300x300?text=Your+Beautiful+Photo" alt="Beautiful moment">
+                    <div class="frame-decoration"></div>
+                </div>
+                <div class="love-message">
+                    <p id="photoMessage">You are absolutely gorgeous and amazing! Every moment with you is special 💖</p>
+                </div>
+            </div>
+            <div class="choices">
+                <button class="btn btn-primary" onclick="goToPage(5)">Continue Our Adventure 💕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Tree Scene -->
+    <div id="page5" class="page">
+        <div class="container">
+            <div class="scene-container tree-scene">
+                <div class="tree-background">
+                    <div class="tree tree1"></div>
+                    <div class="tree tree2"></div>
+                    <div class="falling-leaves">
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                        <div class="leaf"></div>
+                    </div>
+                </div>
+                <canvas id="treeCanvas"></canvas>
+            </div>
+            <div class="choices">
+                <button class="btn btn-primary" onclick="goToPage(6)">Open The Card 💌</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 6: Diary/Card -->
+    <div id="page6" class="page">
+        <div class="container">
+            <div class="diary-container">
+                <div class="diary-page" id="diaryPage">
+                    <div class="diary-content">
+                        <h2>Dear Arshiya 💕</h2>
+                        <div class="diary-entry">
+                            <img src="https://via.placeholder.com/200x200?text=Photo+1" alt="Memory 1" class="diary-photo">
+                            <p><strong>Page 1:</strong></p>
+                            <p>Today marks the beginning of another beautiful year of your life. Every moment I spend with you is precious and unforgettable. Your smile lights up my world in ways I can't even describe. Happy Birthday to the most amazing person I know! 💖</p>
+                        </div>
+                        <div class="diary-entry">
+                            <img src="https://via.placeholder.com/200x200?text=Photo+2" alt="Memory 2" class="diary-photo">
+                            <p><strong>Page 2:</strong></p>
+                            <p>You make every single day feel special. Your laugh, your kindness, your beautiful heart - it all makes you the most wonderful person. I'm so grateful to have you in my life. You deserve all the happiness in the world! 🌟</p>
+                        </div>
+                        <div class="diary-entry">
+                            <img src="https://via.placeholder.com/200x200?text=Photo+3" alt="Memory 3" class="diary-photo">
+                            <p><strong>Page 3:</strong></p>
+                            <p>As you celebrate another year, know that you are loved deeply and cherished endlessly. May this year bring you endless joy, success, and unforgettable moments. You are my everything, Arshiya! Happy Birthday! 💕✨</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="choices">
+                <button class="btn btn-primary" onclick="goToPage(7)">See The Magic ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7: Final Celebration -->
+    <div id="page7" class="page final-page">
+        <div class="container">
+            <canvas id="fireworksCanvas"></canvas>
+            <div class="night-sky">
+                <div class="stars"></div>
+                <div class="heart-glow"></div>
+            </div>
+            <div class="final-message">
+                <h1>🎂 Happy Birthday Arshiya! 🎂</h1>
+                <div class="heart-animation">
+                    <span class="heart">💖</span>
+                </div>
+                <p class="birthday-wish">Thank you for coming into my life and making every moment beautiful. You are my greatest blessing. I love you so much! Have the most amazing birthday ever! 🌟💕✨</p>
+                <p class="love-note">Forever yours 💕</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
